@@ -1,0 +1,218 @@
+/* Catppuccin Mocha themed wofi style.css - Rounded corners focus */
+window {
+    margin: 0px;
+    border: 2px solid #f5c2e7; /* Pink border */
+    background-color: #1e1e2e; /* Base background */
+    border-radius: 10px; /* Main window rounded corners */
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 0.937em;
+    /* Fixed window dimensions */
+    width: 600px;
+    height: 400px;
+    min-width: 600px;
+    min-height: 400px;
+    max-width: 600px;
+    max-height: 400px;
+    /* Prevent any horizontal scrolling */
+    overflow-x: hidden;
+    /* Add subtle shadow for depth */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+#input {
+    margin: 12px;
+    padding: 14px 18px;
+    border: 2px solid #313244; /* Surface0 */
+    background-color: #181825; /* Mantle */
+    color: #cdd6f4; /* Text */
+    border-radius: 16px; /* Rounded input field */
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#input:focus {
+    border-color: #f5c2e7; /* Pink when focused */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(245, 194, 231, 0.2); /* Pink glow */
+    background-color: #11111b; /* Crust when focused */
+}
+
+#inner-box {
+    margin: 12px;
+    border: none;
+    background-color: transparent;
+    border-radius: 14px;
+    /* Prevent horizontal overflow */
+    overflow-x: hidden;
+    max-width: calc(100% - 24px);
+}
+
+#outer-box {
+    margin: 12px;
+    border: none;
+    background-color: transparent;
+    border-radius: 14px;
+    /* Prevent horizontal overflow */
+    overflow-x: hidden;
+    max-width: calc(100% - 24px);
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+    border-radius: 12px;
+    /* Ensure scrolling works properly with fixed height */
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 100%;
+    /* Inner container styling */
+    background-color: rgba(24, 24, 37, 0.3); /* Subtle background */
+}
+
+#text {
+    margin: 10px;
+    color: #cdd6f4; /* Text */
+    font-weight: normal;
+    /* Enable word wrapping */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    /* Prevent horizontal overflow */
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#entry {
+    padding: 12px 16px;
+    margin: 4px 8px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-radius: 12px; /* Rounded entry items */
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Entry layout */
+    min-height: auto;
+    height: auto;
+    /* Prevent horizontal overflow */
+    overflow: hidden;
+    max-width: calc(100% - 16px);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+#entry:selected {
+    background-color: #313244; /* Surface0 */
+    color: #f5c2e7; /* Pink text when selected */
+    border: 1px solid #f5c2e7; /* Pink border when selected */
+    border-radius: 14px; /* Slightly more rounded when selected */
+    transform: translateX(4px); /* Subtle slide effect */
+    box-shadow: 0 4px 12px rgba(245, 194, 231, 0.15); /* Pink shadow */
+}
+
+#entry:hover:not(:selected) {
+    background-color: #45475a; /* Surface1 */
+    color: #cdd6f4; /* Text */
+    border-radius: 14px;
+    transform: translateX(2px); /* Subtle hover movement */
+    box-shadow: 0 2px 8px rgba(69, 71, 90, 0.3);
+}
+
+/* Style for the search icon/prompt */
+#text:first-child {
+    color: #f5c2e7; /* Pink for prompt text */
+}
+
+/* Text styling within entries */
+#entry #text {
+    color: #cdd6f4; /* Text color for entries */
+    /* Enhanced word wrapping for entry text */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+    /* Proper line height for readability */
+    line-height: 1.5;
+    /* Ensure text doesn't overflow horizontally */
+    max-width: 100%;
+    overflow: hidden;
+    display: block;
+    /* Smooth text transitions */
+    transition: color 0.2s ease;
+}
+
+#entry:selected #text {
+    color: #f5c2e7; /* Pink text for selected entry */
+    font-weight: 600; /* Slightly bolder when selected */
+}
+
+/* Enhanced scrollbar with rounded corners */
+scrollbar {
+    background-color: #181825; /* Mantle */
+    border-radius: 10px;
+    width: 12px;
+    margin: 8px;
+}
+
+scrollbar slider {
+    background-color: #313244; /* Surface0 */
+    border-radius: 10px;
+    min-height: 30px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+scrollbar slider:hover {
+    background-color: #45475a; /* Surface1 */
+    border-color: #f5c2e7; /* Pink border on hover */
+}
+
+scrollbar slider:active {
+    background-color: #f5c2e7; /* Pink when dragging */
+}
+
+/* Special styling for different entry types with rounded corners */
+#entry.activatable {
+    background-color: rgba(116, 199, 236, 0.08); /* Subtle blue background */
+    border-radius: 12px;
+    border: 1px solid rgba(116, 199, 236, 0.2);
+}
+
+#entry.activatable:selected {
+    background-color: #74c7ec; /* Blue background when selected */
+    color: #1e1e2e; /* Dark text on blue background */
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(116, 199, 236, 0.3);
+}
+
+#entry.activatable:selected #text {
+    color: #1e1e2e; /* Dark text on blue background */
+}
+
+#entry.activatable:hover:not(:selected) {
+    background-color: rgba(116, 199, 236, 0.15);
+    border-color: rgba(116, 199, 236, 0.4);
+}
+
+/* Additional rounded corner enhancements */
+* {
+    /* Ensure all elements can have smooth transitions */
+    transition-property: background-color, border-color, color, transform, box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
+/* Subtle animation for the entire window */
+window {
+    animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}

@@ -1,0 +1,8 @@
+//@theme "/home/aryan/.local/share/rofi/themes/style_9.rasi"
+configuration {
+    terminal: "kitty";
+}
+
+//@theme "/home/aryan/.local/share/rofi/themes/style_9.rasi"
+
+@theme "/home/aryan/.local/share/rofi/themes/style_9.rasi"

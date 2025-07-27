@@ -1,0 +1,9 @@
+[opener]
+okular = [
+    { run = 'okular "$@"', desc = "Okular" }
+]
+
+[open]
+rules = [
+    { name = "*.pdf", use = "okular" }
+]

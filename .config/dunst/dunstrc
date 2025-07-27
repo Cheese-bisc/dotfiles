@@ -1,0 +1,177 @@
+# Catppuccin Mocha themed dunstrc configuration
+# Place this file at ~/.config/dunst/dunstrc
+
+[global]
+    # Display
+    monitor = 0
+    follow = none
+    
+    # Geometry
+    width = (0, 450)
+    height = (0, 400)
+    origin = top-right
+    offset = (10, 50)
+    scale = 0
+    notification_limit = 5
+    
+    # Progress bar
+    progress_bar = true
+    progress_bar_height = 12
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 200
+    progress_bar_max_width = 400
+    progress_bar_corner_radius = 6
+    
+    # Appearance
+    transparency = 0
+    separator_height = 2
+    padding = 12
+    horizontal_padding = 16
+    text_icon_padding = 0
+    frame_width = 2
+    frame_color = "#cba6f7"
+    separator_color = frame
+    sort = yes
+    
+    # Text
+    font = "JetBrainsMono Nerd Font 11"
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+    
+    # Icons
+    icon_position = left
+    min_icon_size = 0
+    max_icon_size = 32
+    icon_path = /usr/share/icons/breeze/status/16:/usr/share/icons/breeze/devices/16:/usr/share/icons/hicolor/16x16/apps:/usr/share/pixmaps
+    
+    # History
+    sticky_history = yes
+    history_length = 20
+    
+    # Misc/Advanced
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 10
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+    
+    # Mouse
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+# Catppuccin Mocha color scheme
+[urgency_low]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#cba6f7"
+    timeout = 5
+    
+[urgency_normal]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#cba6f7"
+    timeout = 10
+
+[urgency_critical]
+    background = "#1e1e2e"
+    foreground = "#cdd6f4"
+    frame_color = "#f38ba8"
+    timeout = 0
+
+# Custom rules for brightness notifications
+[brightness]
+    appname = "brightness"
+    background = "#1e1e2e"
+    foreground = "#f9e2af"
+    frame_color = "#f9e2af"
+    timeout = 2
+    format = "<b>☀ Brightness</b>\n%b"
+    
+[brightness-low]
+    appname = "brightness"
+    summary = "*"
+    body = "*[0-2][0-9]%*"
+    background = "#1e1e2e"
+    foreground = "#fab387"
+    frame_color = "#fab387"
+    timeout = 2
+    format = "<b>🔅 Brightness</b>\n%b"
+
+# Custom rules for volume notifications
+[volume]
+    appname = "volume"
+    background = "#1e1e2e"
+    foreground = "#cba6f7"
+    frame_color = "#cba6f7"
+    timeout = 2
+    format = "<b>🔊 Volume</b>\n%b"
+    
+[volume-muted]
+    appname = "volume"
+    summary = "*muted*"
+    background = "#1e1e2e"
+    foreground = "#f38ba8"
+    frame_color = "#f38ba8"
+    timeout = 2
+    format = "<b>🔇 Volume</b>\n%b"
+
+[volume-low]
+    appname = "volume"
+    summary = "*"
+    body = "*[0-2][0-9]%*"
+    background = "#1e1e2e"
+    foreground = "#a6e3a1"
+    frame_color = "#a6e3a1"
+    timeout = 2
+    format = "<b>🔉 Volume</b>\n%b"
+
+# Battery notifications
+[battery]
+    appname = "battery"
+    background = "#1e1e2e"
+    foreground = "#a6e3a1"
+    frame_color = "#a6e3a1"
+    timeout = 10
+    format = "<b>🔋 Battery</b>\n%b"
+    
+[battery-low]
+    appname = "battery"
+    summary = "*low*"
+    background = "#1e1e2e"
+    foreground = "#f38ba8"
+    frame_color = "#f38ba8"
+    timeout = 0
+    format = "<b>⚠ Battery Low</b>\n%b"
+
+# Network notifications
+[network]
+    appname = "network"
+    background = "#1e1e2e"
+    foreground = "#94e2d5"
+    frame_color = "#94e2d5"
+    timeout = 5
+    format = "<b>📶 Network</b>\n%b"
+
+# Media notifications
+[media]
+    appname = "media"
+    background = "#1e1e2e"
+    foreground = "#cba6f7"
+    frame_color = "#cba6f7"
+    timeout = 5
+    format = "<b>🎵 Media</b>\n%b"
