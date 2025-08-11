@@ -50,8 +50,7 @@ get_id_for_selection() {
         
         if [ -n "$selected_id" ]; then
             # Decode and copy to clipboard WITHOUT adding to cliphist history
-            cliphist decode "$selected_id" | wl-copy --primary
-            wl-paste --primary | wl-copy
+            cliphist decode "$selected_id" | tee >(wl-copy --primary) | wl-copy
         fi
     fi
     

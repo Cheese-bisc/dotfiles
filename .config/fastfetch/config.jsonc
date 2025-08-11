@@ -93,7 +93,7 @@ fastfetch --config hyde/*.jsonc
     },
     {
       "type": "memory",
-      "key": "   Memory ",
+      "key": "  \uE266 Memory ",
       "keyColor": "magenta"
     },
     {

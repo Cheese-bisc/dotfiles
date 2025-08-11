@@ -27,10 +27,12 @@ alias cl=clang
 alias cl+=clang++
 alias e=exit
 alias z=zed
-alias ff=fastfetch
+alias ff=~/Scripts/fastfetch.sh
 alias uf=uwufetch
 alias n=nitch
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias s='yay -Ss'
+alias i='yay -S'
 
 alias ls='eza --icons --color=always --group-directories-first'
 alias ll='eza -l --icons --color=always --group-directories-first'
@@ -54,3 +56,5 @@ function y() {
 }
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export PATH=$PATH:/home/aryan/.spicetify

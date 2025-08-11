@@ -21,7 +21,7 @@
 // "width": 1444,
 	
 "modules-left": [
-	"hyprland/workspaces#numbers", 
+	"hyprland/workspaces#pacman", 
     "custom/separator#line",
     "hyprland/window"
 	],
