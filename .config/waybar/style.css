@@ -182,19 +182,38 @@ tooltip {
   color: #a6e3a1;
 }
 
+/* #taskbar button.active { */
+/*   background-color: #cba6f7; */
+/*   padding-left: 12px; */
+/*   padding-right: 12px; */
+/*   animation: gradient_f 20s ease-in infinite; */
+/*   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
+/* } */
+/**/
+/* #taskbar button:hover { */
+/*   padding-left: 3px; */
+/*   padding-right: 3px; */
+/*   animation: gradient_f 20s ease-in infinite; */
+/*   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
+/* } */
+
+#taskbar button {
+  border-radius: 7px;
+  transition: all 0.25s ease-out;
+}
+
 #taskbar button.active {
-  background-color: #cba6f7;
+  background-color: #b4a1f0;
+  color: #1e1e2e;
   padding-left: 12px;
   padding-right: 12px;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #taskbar button:hover {
-  padding-left: 3px;
-  padding-right: 3px;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  background-color: #a28ee8;
+  color: #1e1e2e;
+  padding-left: 9px;
+  padding-right: 9px;
 }
 
 #battery.critical:not(.charging) {

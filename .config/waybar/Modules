@@ -334,7 +334,7 @@
   "on-click": "pavucontrol",
   "on-click-right": "pamixer -t",
   "tooltip-format": "Playing at {volume}%",
-  "scroll-step": 2,
+  "scroll-step": 1,
   "format-muted": "",
   "format-icons": {
     "default": ["", "", ""],
@@ -428,8 +428,7 @@
 	"ignore-list": [
 		"wofi",
 		"rofi",
-		"kitty",
     "kitty-dropterm"
-		],
+	],
 },
 }
