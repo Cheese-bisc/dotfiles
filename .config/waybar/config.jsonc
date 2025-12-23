@@ -17,7 +17,7 @@
   "margin-top": 5,
   "margin-left": 6,
   "margin-right": 6,
-  //"margin-bottom": 5,
+  "margin-bottom": 4,
   // "width": 1444,
   "modules-left": [
     "hyprland/workspaces#pacman",
@@ -30,11 +30,13 @@
     "custom/update#oma",
     "custom/separator#blank",
     "custom/screenrecording-indicator",
+    // "custom/separator#line",
+    "custom/spotify-playing",
   ],
   "modules-right": [
     "custom/separator#blank",
     "group/tray-expander",
-    "custom/separator#blank",
+    // "custom/separator#blank",
     "bluetooth#oma",
     "custom/separator#blank",
     "network#oma",
