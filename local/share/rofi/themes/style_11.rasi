@@ -7,16 +7,7 @@
  * Copyright: https://github.com/prasanthrangan/hyprdots/
  */
 
-* {
-    main-bg:            #11111be6;
-    main-fg:            #cdd6f4ff;
-    main-br:            #cba6f7ff;
-    main-ex:            #f5e0dcff;
-    select-bg:          #b4befeff;
-    select-fg:          #11111bff;
-    separatorcolor:     transparent;
-    border-color:       transparent;
-}
+
 // Config //
 configuration {
     modi:                        "drun,filebrowser,window,run";
@@ -31,6 +22,7 @@ configuration {
     icon-theme:                  "Tela-circle-dracula";
 }
 
+@theme "~/.config/rofi/theme.rasi"
 
 
 // Main //
@@ -65,7 +57,7 @@ inputbar {
     children:                    [ "entry" ];
     expand:                      false;
     background-color:            @main-bg;
-    background-image:            url("~/Personal/wallpapers/pixelparadise.jpg", width);
+    background-image:            url("~/.cache/hyde/wall.quad", width);
     border-radius:               1em 0em 0em 1em;
 }
 entry {
@@ -107,7 +99,7 @@ dummy {
 // Elements //
 element {
     enabled:                     true;
-    spacing:                     2em;
+    spacing:                     1em;
     padding:                     0.5em 0.5em 0.5em 1.5em;
     cursor:                      pointer;
     background-color:            transparent;
@@ -116,7 +108,6 @@ element {
 element selected.normal {
     background-color:            @select-bg;
     text-color:                  @select-fg;
-    border-radius:               1em;
 }
 element-icon {
     size:                        2.2em;

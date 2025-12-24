@@ -17,7 +17,7 @@
 	},
 },
 //Omarchy style
-"hyprland/workspaces": {
+"hyprland/workspaces#oma": {
     "on-click": "activate",
     "format": "{icon}",
     "format-icons": {
@@ -31,7 +31,7 @@
       "7": "7",
       "8": "8",
       "9": "9",
-      "10": "0",
+      "10": "10",
       "active": "󱓻",
     },
     "persistent-workspaces": {
@@ -263,7 +263,7 @@
 		"class<libreoffice-calc>": " ",
 		"title<.*nvim ~.*>": " ",
 		"title<.*vim.*>": " ",
-		"title<.*nvim.*>": " ",
+		"title<.*nvim.*>": "  ",
 		"title<.*figma.*>": " ",
 		"title<.*jira.*>": " ",
 		"class<jetbrains-idea>": " ",

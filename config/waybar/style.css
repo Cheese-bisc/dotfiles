@@ -1,10 +1,15 @@
+@import "../omarchy/current/theme/waybar.css";
 * {
   font-family: "JetBrainsMono Nerd Font Propo";
   font-weight: 500;
-  min-height: 0;
+  /* min-height: 0; */
   /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-  font-size: 104%;
+  font-size: 20px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+
+  border: none;
+  border-radius: 0;
+  min-height: 25px;
 }
 
 window#waybar {
@@ -60,45 +65,76 @@ tooltip {
   padding-left: 5px;
 }
 
+/**/
+/* #taskbar button, */
+/* #workspaces button { */
+/*   color: #f9e2af; */
+/*   box-shadow: none; */
+/*   text-shadow: none; */
+/*   padding: 0px; */
+/*   border-radius: 9px; */
+/*   padding-left: 4px; */
+/*   padding-right: 4px; */
+/*   animation: gradient_f 20s ease-in infinite; */
+/*   transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
+/* } */
+/**/
+/* #workspaces button.active { */
+/*   color: #cba6f7; */
+/*   border-radius: 20%; */
+/*   background-color: #11111b; */
+/*   padding-left: 8px; */
+/*   padding-right: 8px; */
+/*   animation: gradient_f 20s ease-in infinite; */
+/*   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
+/* } */
+/**/
+/* #workspaces button.focused { */
+/*   color: #cdd6f4; */
+/* } */
+/**/
+/* #workspaces button.urgent { */
+/*   color: #11111b; */
+/*   border-radius: 10px; */
+/* } */
+/**/
+/* #workspaces button:hover { */
+/*   color: #94e2d5; */
+/*   border-radius: 15px; */
+/*   padding-left: 2px; */
+/*   padding-right: 2px; */
+/*   animation: gradient_f 20s ease-in infinite; */
+/*   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
+/* } */
+
 #taskbar button,
 #workspaces button {
   color: #f9e2af;
   box-shadow: none;
   text-shadow: none;
-  padding: 0px;
+  padding: 0;
   border-radius: 9px;
   padding-left: 4px;
   padding-right: 4px;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  animation: gradient_f 20s linear infinite;
+  transition:
+    background-color 0.18s ease-out,
+    color 0.18s ease-out,
+    padding 0.18s ease-out;
 }
 
 #workspaces button.active {
   color: #cba6f7;
-  border-radius: 20%;
   background-color: #11111b;
-  padding-left: 8px;
-  padding-right: 8px;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-}
-
-#workspaces button.focused {
-  color: #cdd6f4;
-}
-
-#workspaces button.urgent {
-  color: #11111b;
-  border-radius: 10px;
+  padding-left: 6px; /* tiny change from 4px */
+  padding-right: 6px;
 }
 
 #workspaces button:hover {
   color: #94e2d5;
-  border-radius: 15px;
-  padding-left: 2px;
-  padding-right: 2px;
-  animation: gradient_f 20s ease-in infinite;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  background-color: #11111b;
+  padding-left: 5px; /* even smaller step */
+  padding-right: 5px;
 }
 
 #backlight,
@@ -164,6 +200,11 @@ tooltip {
   padding-bottom: 4px;
   padding-right: 6px;
   padding-left: 6px;
+}
+#custom-update,
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin: 0 7.5px;
 }
 
 #temperature.critical {
@@ -248,4 +289,14 @@ tooltip {
   min-height: 10px;
   border-radius: 5px;
   background-color: #cba6f7;
+}
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 8.75px;
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #a55555;
 }

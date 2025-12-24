@@ -1,0 +1,121 @@
+@define-color bar-bg rgba(24, 24, 37, 0.94);
+
+@define-color main-bg #1e1e2e;    /* mocha base */
+@define-color wb-act-bg #313244; /* surface0 */
+@define-color wb-hvr-bg #45475a; /* surface2 */
+* {
+    background-image: none;
+    font-size: ${fntSize}px;
+}
+
+/* @import "/home/aryan/.config/waybar/theme.css"; */
+
+window {
+    background-color: transparent;
+}
+
+button {
+    color: ${BtnCol};
+    background-color: @main-bg;
+    outline-style: none;
+    border: none;
+    border-width: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+    animation: gradient_f 20s ease-in infinite;
+}
+
+button:focus {
+    background-color: @wb-act-bg;
+    background-size: 30%;
+}
+
+button:hover {
+    background-color: @wb-hvr-bg;
+    background-size: 40%;
+    border-radius: ${active_rad}px;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+button:hover#lock {
+    border-radius: ${active_rad}px;
+    margin : ${hvr}px 0px ${hvr}px ${mgn}px;
+    background-color: #2d6f6b;
+}
+
+button:hover#logout {
+    border-radius: ${active_rad}px;
+    margin : ${hvr}px 0px ${hvr}px 0px;
+    background-color: #6c7086;
+}
+
+button:hover#suspend {
+    border-radius: ${active_rad}px;
+    margin : ${hvr}px 0px ${hvr}px 0px;
+    background-color: #5b6b8a;
+}
+
+button:hover#shutdown {
+    border-radius: ${active_rad}px;
+    margin : ${hvr}px 0px ${hvr}px 0px;
+    background-color: #a04a4a;
+}
+
+button:hover#hibernate {
+    border-radius: ${active_rad}px;
+    margin : ${hvr}px 0px ${hvr}px 0px;
+    background-color: #8f5e3b;
+}
+
+button:hover#reboot {
+    border-radius: ${active_rad}px;
+    margin : ${hvr}px ${mgn}px ${hvr}px 0px;
+    background-color: #5c8a64;
+}
+
+#lock {
+    background-image: image(url("/home/aryan/.config/wlogout/icons/lock_${BtnCol}.png"), url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+    border-radius: ${button_rad}px 0px 0px ${button_rad}px;
+    margin : ${mgn}px 0px ${mgn}px ${mgn}px;
+}
+
+#logout {
+    background-image: image(url("/home/aryan/.config/wlogout/icons/logout_${BtnCol}.png"), url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin : ${mgn}px 0px ${mgn}px 0px;
+}
+
+#suspend {
+    background-image: image(url("/home/aryan/.config/wlogout/icons/suspend_${BtnCol}.png"), url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin : ${mgn}px 0px ${mgn}px 0px;
+}
+
+#shutdown {
+    background-image: image(url("/home/aryan/.config/wlogout/icons/shutdown_${BtnCol}.png"), url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin : ${mgn}px 0px ${mgn}px 0px;
+}
+
+#hibernate {
+    background-image: image(url("/home/aryan/.config/wlogout/icons/hibernate_${BtnCol}.png"), url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin : ${mgn}px 0px ${mgn}px 0px;
+}
+
+#reboot {
+    background-image: image(url("/home/aryan/.config/wlogout/icons/reboot_${BtnCol}.png"), url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+    border-radius: 0px ${button_rad}px ${button_rad}px 0px;
+    margin : ${mgn}px ${mgn}px ${mgn}px 0px;
+}
+button:focus#lock      { background-color: #245e5a; }
+button:focus#logout    { background-color: #585b70; }
+button:focus#suspend   { background-color: #4f5f7a; }
+button:focus#shutdown  { background-color: #8a3f3f; }
+button:focus#hibernate { background-color: #7a4f32; }
+button:focus#reboot    { background-color: #4f7556; }

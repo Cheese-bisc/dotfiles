@@ -296,6 +296,7 @@
     "interval": 3,
     "spacing": 1,
     "on-click": "~/.config/hypr/scripts/nmtui.sh",
+    //"on-click":"omarchy-launch-wifi"
 },
 
 "network#speed": {
