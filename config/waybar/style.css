@@ -1,10 +1,7 @@
-@import "../omarchy/current/theme/waybar.css";
 * {
   font-family: "JetBrainsMono Nerd Font Propo";
   font-weight: 500;
-  /* min-height: 0; */
-  /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-  font-size: 20px;
+  font-size: 18px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 
   border: none;
@@ -12,291 +9,109 @@
   min-height: 25px;
 }
 
+/* ---------------- GLOBAL RESET ---------------- */
 window#waybar {
   background: transparent;
-  color: #cba6f7;
+  color: #cdd6f4; /* text */
 }
 
-window#waybar.hidden {
-  opacity: 0.5;
-}
-
-tooltip {
-  background: #1e1e2e;
-  border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #11111b;
-  color: #cba6f7;
-}
-
-/*-----module groups----*/
+.modules-left,
+.modules-center,
 .modules-right {
-  border: 1.5px solid #f38ba8;
-  border-radius: 12px 12px 12px 12px;
-  background-color: #1e1e2e;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-right: 5px;
-  padding-left: 5px;
+  background: transparent;
+  padding: 0 6px;
 }
 
-.modules-center {
-  border: 1.5px solid #cba6f7;
-  border-radius: 12px 12px 12px 12px;
-  background-color: #1e1e2e;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-right: 5px;
-  padding-left: 5px; /* padding-top: 2px; */
-  /* padding-bottom: 2px; */
-  /* padding-right: 4px; */
-  /* padding-left: 4px; */
+/* ---------------- ISLAND BASE ---------------- */
+/* Solid Catppuccin Mocha pills */
+#waybar widget > * {
+  background-color: #1e1e2e; /* base */
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin: 0 6px;
+
+  /* subtle depth, not glass */
 }
 
-.modules-left {
-  /*background-color: #1e1e2e;*/
-  border: 1.5px solid #89b4fa;
-  border-radius: 12px 12px 12px 12px;
-  background-color: #1e1e2e;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-right: 5px;
-  padding-left: 5px;
+/* prevent nested backgrounds */
+#waybar widget > * > * {
+  background: transparent;
 }
 
-/**/
-/* #taskbar button, */
-/* #workspaces button { */
-/*   color: #f9e2af; */
-/*   box-shadow: none; */
-/*   text-shadow: none; */
-/*   padding: 0px; */
-/*   border-radius: 9px; */
-/*   padding-left: 4px; */
-/*   padding-right: 4px; */
-/*   animation: gradient_f 20s ease-in infinite; */
-/*   transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
-/* } */
-/**/
-/* #workspaces button.active { */
-/*   color: #cba6f7; */
-/*   border-radius: 20%; */
-/*   background-color: #11111b; */
-/*   padding-left: 8px; */
-/*   padding-right: 8px; */
-/*   animation: gradient_f 20s ease-in infinite; */
-/*   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
-/* } */
-/**/
-/* #workspaces button.focused { */
-/*   color: #cdd6f4; */
-/* } */
-/**/
-/* #workspaces button.urgent { */
-/*   color: #11111b; */
-/*   border-radius: 10px; */
-/* } */
-/**/
-/* #workspaces button:hover { */
-/*   color: #94e2d5; */
-/*   border-radius: 15px; */
-/*   padding-left: 2px; */
-/*   padding-right: 2px; */
-/*   animation: gradient_f 20s ease-in infinite; */
-/*   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
-/* } */
-
-#taskbar button,
-#workspaces button {
-  color: #f9e2af;
-  box-shadow: none;
-  text-shadow: none;
-  padding: 0;
-  border-radius: 9px;
-  padding-left: 4px;
-  padding-right: 4px;
-  animation: gradient_f 20s linear infinite;
-  transition:
-    background-color 0.18s ease-out,
-    color 0.18s ease-out,
-    padding 0.18s ease-out;
-}
-
-#workspaces button.active {
-  color: #cba6f7;
-  background-color: #11111b;
-  padding-left: 6px; /* tiny change from 4px */
-  padding-right: 6px;
-}
-
-#workspaces button:hover {
-  color: #94e2d5;
-  background-color: #11111b;
-  padding-left: 5px; /* even smaller step */
-  padding-right: 5px;
-}
-
-#backlight,
-#backlight-slider,
-#battery,
-#bluetooth,
-#clock,
-#cpu,
-#disk,
-#idle_inhibitor,
-#keyboard-state,
-#custom-spotify-playing,
-#memory,
-#mode,
-#mpris,
-#network,
-#power-profiles-daemon,
-#pulseaudio,
-#pulseaudio-slider,
-#taskbar,
-#temperature,
-#tray,
-#window,
-#wireplumber,
-#workspaces,
-#tray-expander,
-#custom-backlight,
-#custom-browser,
-#custom-cava_mviz,
-#custom-cycle_wall,
-#custom-dot_update,
-#custom-file_manager,
-#custom-keybinds,
-#custom-keyboard,
-#custom-light_dark,
-#custom-lock,
-#custom-hint,
-#custom-hypridle,
-#custom-menu,
-#custom-playerctl,
-#custom-power_vertical,
-#custom-power,
-#custom-quit,
-#custom-reboot,
-#custom-settings,
-#custom-spotify,
-#custom-swaync,
-#custom-tty,
-#custom-updater,
-#custom-weather,
-#custom-weather.clearNight,
-#custom-weather.cloudyFoggyDay,
-#custom-weather.cloudyFoggyNight,
-#custom-weather.default,
-#custom-weather.rainyDay,
-#custom-weather.rainyNight,
-#custom-weather.severe,
-#custom-weather.showyIcyDay,
-#custom-weather.snowyIcyNight,
-#custom-weather.sunnyDay {
-  color: #f5e0dc;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-right: 6px;
-  padding-left: 6px;
-}
-#custom-update,
-#custom-screenrecording-indicator {
-  min-width: 12px;
-  margin: 0 7.5px;
-}
-
-#temperature.critical {
-  background-color: #f38ba8;
-}
-
-@keyframes blink {
-  to {
-    color: #11111b;
-  }
-}
-
-/*-----Indicators----*/
-#custom-hypridle.notactive,
-#idle_inhibitor.activated {
-  color: #a6e3a1;
-}
-
-/* #taskbar button.active { */
-/*   background-color: #cba6f7; */
-/*   padding-left: 12px; */
-/*   padding-right: 12px; */
-/*   animation: gradient_f 20s ease-in infinite; */
-/*   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
-/* } */
-/**/
-/* #taskbar button:hover { */
-/*   padding-left: 3px; */
-/*   padding-right: 3px; */
-/*   animation: gradient_f 20s ease-in infinite; */
-/*   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682); */
-/* } */
-
-#taskbar button {
-  border-radius: 7px;
-  transition: all 0.25s ease-out;
-}
-
-#taskbar button.active {
-  background-color: #b4a1f0;
-  color: #1e1e2e;
+/* ---------------- LEFT ISLAND ---------------- */
+#workspaces.oma,
+#window {
   padding-left: 12px;
   padding-right: 12px;
 }
 
-#taskbar button:hover {
-  background-color: #a28ee8;
-  color: #1e1e2e;
-  padding-left: 9px;
-  padding-right: 9px;
-}
-
-#battery.critical:not(.charging) {
-  color: #f38ba8;
-  animation-name: blink;
-  animation-duration: 3s;
-  animation-timing-function: steps(12);
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#backlight-slider slider,
-#pulseaudio-slider slider {
-  min-width: 0px;
-  min-height: 0px;
-  opacity: 0;
-  background-image: none;
-  border: none;
+/* workspace buttons */
+#workspaces button {
+  background: transparent;
   box-shadow: none;
+  margin: 0 3px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  color: #bac2de;
 }
 
-#backlight-slider trough,
-#pulseaudio-slider trough {
-  min-width: 80px;
-  min-height: 5px;
-  border-radius: 5px;
-  background-color: #313244;
+#workspaces button.active {
+  background-color: #313244; /* surface0 */
+  color: #cba6f7; /* mauve */
 }
 
-#backlight-slider highlight,
-#pulseaudio-slider highlight {
-  min-height: 10px;
-  border-radius: 5px;
-  background-color: #cba6f7;
+#workspaces button:hover {
+  background-color: #45475a; /* surface1 */
 }
 
-#custom-screenrecording-indicator {
-  min-width: 12px;
-  margin-left: 8.75px;
-  font-size: 10px;
+#workspaces button.empty {
+  opacity: 0.5;
 }
 
-#custom-screenrecording-indicator.active {
-  color: #a55555;
+/* ---------------- CENTER ISLANDS ---------------- */
+#clock.oma {
+  font-weight: 600;
+  color: #f9e2af; /* yellow */
+}
+
+#custom-spotify-playing.oma {
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #a6e3a1; /* green */
+}
+
+/* ---------------- RIGHT ISLAND ---------------- */
+#pulseaudio.oma {
+  color: #89b4fa; /* blue */
+}
+
+#network.oma {
+  color: #74c7ec; /* sky */
+}
+
+#bluetooth.oma {
+  color: #94e2d5; /* teal */
+}
+
+#battery.oma {
+  color: #a6e3a1; /* green */
+}
+
+#custom-power {
+  color: #f38ba8; /* red */
+}
+
+/* tighter spacing between right icons */
+#pulseaudio.oma,
+#network.oma,
+#bluetooth.oma {
+  margin-right: 2px;
+}
+
+/* ---------------- TOOLTIP ---------------- */
+tooltip {
+  background-color: #181825; /* mantle */
+  border-radius: 12px;
+  border: 1px solid #11111b; /* crust */
+  color: #cdd6f4;
 }

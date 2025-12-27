@@ -6,7 +6,7 @@
 		"transition-duration": 500,
 		"children-class": "custom/menu",
 		"transition-left-to-right": true
-        },
+  },
 	"modules": [
 		"custom/menu",
 		"custom/light_dark",
@@ -23,7 +23,7 @@
     "transition-duration": 600,
     "children-class": "tray-group-item",
   },
-  "modules": ["custom/expand-icon", "tray"],
+  "modules": ["custom/expand-icon", "tray","idle_inhibitor"],
 },
 
 "group/motherboard": {
@@ -78,7 +78,7 @@
 		"transition-duration": 500,
 		"children-class": "bluetooth",
 		"transition-left-to-right": true
-        },
+  },
 	"modules": [
 		"network",
 		"bluetooth",

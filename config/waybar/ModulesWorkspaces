@@ -16,32 +16,6 @@
 		"default": "",
 	},
 },
-//Omarchy style
-"hyprland/workspaces#oma": {
-    "on-click": "activate",
-    "format": "{icon}",
-    "format-icons": {
-      "default": "",
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "6": "6",
-      "7": "7",
-      "8": "8",
-      "9": "9",
-      "10": "10",
-      "active": "󱓻",
-    },
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-    },
-},
 // ROMAN Numerals style
 "hyprland/workspaces#roman": {
 	"active-only": false,
@@ -214,7 +188,7 @@
 		"class<tor browser>": " ",
 		"class<firefox-developer-edition>": "🦊 ",
 
-		"class<kitty|konsole>": " ",
+		"class<kitty|konsole>": " ",
 		"class<kitty-dropterm>": " ",
 		"class<com.mitchellh.ghostty>": " ",
 		"class<org.wezfurlong.wezterm>": " ",

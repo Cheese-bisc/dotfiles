@@ -126,15 +126,6 @@
 	"on-click-right": "playerctl next",
 },
 
-"custom/spotify-playing":{
-  "format": "<span>  {}</span>",
-  "return-type": "json",
-  "max-length": 25,
-  "exec": "playerctl -p spotify metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-  "on-click-middle": "playerctl -p spotify play-pause",
-  "on-click": "playerctl -p spotify previous",
-  "on-click-right": "playerctl -p spotify next"
-},
 
 "custom/power": {
 	"format": "⏻",
@@ -269,18 +260,5 @@
 	"format": "",
 	"tooltip": false
 },
-"custom/update#oma": {
-    "format": "",
-    "exec": "omarchy-update-available",
-    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
-    "tooltip-format": "Omarchy update available",
-    "signal": 7,
-    "interval": 3600,
-  },
-"custom/screenrecording-indicator": {
-    "on-click": "omarchy-cmd-screenrecord",
-    "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
-    "signal": 8,
-    "return-type": "json",
-  },
+
 }

@@ -1,0 +1,156 @@
+{
+  "group/laptop_stuff#oma": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "custom/laptop_stuff#oma",
+		"transition-left-to-right": true
+  },
+	"modules": [
+    "custom/laptop_stuff#oma",
+	  "pulseaudio#oma",
+    "battery#oma",
+    "backlight#oma",
+	]
+},
+
+"battery#oma": {
+  "format": "{icon} {capacity}%",
+  "format-discharging": "{icon} {capacity}%",
+  "format-charging": "{icon} {capacity}%",
+  "format-plugged": " {capacity}%",
+  "format-full": "󰂅 {capacity}%",
+  "format-icons": {
+    "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+    "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  },
+  "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+  "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+  "interval": 5,
+  "on-click": "omarchy-menu power",
+  "states": {
+    "warning": 20,
+    "critical": 10,
+  },
+},
+
+"hyprland/workspaces#oma": {
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "active": "󱓻",
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+    },
+},
+
+"bluetooth#oma": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-connected": "󰂱",
+    "format-no-controller": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "omarchy-launch-bluetooth",
+},
+
+"clock#oma": {
+  //"format": "{:L%A %H:%M}",
+  "format": "{:%H:%M}",
+  "format-alt": "{:L%d %B W%V %Y}",
+  "tooltip": true,
+  "tooltip-format": "<tt>{calendar}</tt>",
+  "calendar": {
+    "mode": "month",
+    "format": {
+      "months": "<span color='#ffead3'><b>{}</b></span>",
+      "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+      "today": "<span color='#ff6699'><b>{}</b></span>",
+    }},
+    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select",
+},
+
+"network#oma": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon} {essid}",
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "󰀂",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 3,
+    "spacing": 1,
+    "on-click": "~/.config/hypr/scripts/nmtui.sh",
+    //"on-click":"omarchy-launch-wifi"
+},
+
+"pulseaudio#oma": {
+  "format": "{icon} {volume}%",
+  // "on-click": "omarchy-launch-or-focus-tui wiremix",
+  "on-click": "pavucontrol",
+  "on-click-right": "pamixer -t",
+  "tooltip-format": "Playing at {volume}%",
+  "scroll-step": 1,
+  "format-muted": "",
+  "format-icons": {
+    "default": ["", "", ""],
+  },
+},
+
+"backlight#oma": {
+    "interval": 2,
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "󰃝", "󰃞", "󰃟", "󰃠"],
+    "tooltip-format": "Brightness {percent}%",
+    "on-scroll-up": "brightnessctl set +2%",
+    "on-scroll-down": "brightnessctl set 2%-",
+    "smooth-scrolling-threshold": 1,
+},
+
+"custom/update#oma": {
+    "format": "",
+    "exec": "omarchy-update-available",
+    "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+    "tooltip-format": "Omarchy update available",
+    "signal": 7,
+    "interval": 3600,
+},
+"custom/screenrecording-indicator#oma": {
+    "on-click": "omarchy-cmd-screenrecord",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
+    "signal": 8,
+    "return-type": "json",
+},
+
+"custom/spotify-playing#oma":{
+"format": "<span>  {}</span>",
+"return-type": "json",
+"max-length": 25,
+"exec": "playerctl -p spotify metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+"on-click-middle": "playerctl -p spotify play-pause",
+"on-click": "playerctl -p spotify previous",
+"on-click-right": "playerctl -p spotify next"
+},
+
+"custom/laptop_stuff#oma": {
+	"format": "  ",
+},
+
+}
