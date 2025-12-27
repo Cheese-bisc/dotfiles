@@ -71,8 +71,8 @@
 },
 
 "clock#oma": {
-  //"format": "{:L%A %H:%M}",
-  "format": "{:%H:%M}",
+  "format": "{:L%A %H:%M}",
+  //"format": "{:%H:%M}",
   "format-alt": "{:L%d %B W%V %Y}",
   "tooltip": true,
   "tooltip-format": "<tt>{calendar}</tt>",
@@ -87,18 +87,25 @@
 },
 
 "network#oma": {
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "format": "{icon} {essid}",
-    "format-wifi": "{icon} {essid}",
-    "format-ethernet": "󰀂",
-    "format-disconnected": "󰤮",
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-disconnected": "Disconnected",
-    "interval": 3,
-    "spacing": 1,
-    "on-click": "~/.config/hypr/scripts/nmtui.sh",
-    //"on-click":"omarchy-launch-wifi"
+  "interface": "wlan0",
+
+  "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+
+  "format-wifi": "{icon} {essid}",
+  "format-ethernet": "󰀂",
+  "format-disconnected": "󰤮",
+
+  "format": "{icon}",
+
+  "format-alt": "{icon} {essid}",
+
+  "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+  "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+  "tooltip-format-disconnected": "Disconnected",
+
+  "interval": 3,
+  "spacing": 1,
+  "on-click": "~/.config/hypr/scripts/nmtui.sh"
 },
 
 "pulseaudio#oma": {
@@ -151,6 +158,28 @@
 
 "custom/laptop_stuff#oma": {
 	"format": "  ",
+},
+
+"custom/mpd-playing#oma": {
+  "format": "<span>   {}</span>",
+  "return-type": "json",
+  "interval": 2,
+  "max-length": 25,
+
+  "exec": "state=$(mpc status | sed -n '2s/.*\\[\\(.*\\)\\].*/\\1/p'); track=$(mpc --format '%artist% - %title%' current); if [ \"$state\" = \"stopped\" ]; then echo '{\"text\":\"\",\"class\":\"stopped\"}'; else echo \"{\\\"text\\\":\\\"$track\\\",\\\"class\\\":\\\"$state\\\"}\"; fi",
+
+  "on-click-middle": "mpc toggle",
+  "on-click": "mpc prev",
+  "on-click-right": "mpc next"
+},
+
+"custom/protonvpn#oma": {
+  "interval": 3,
+  "return-type": "json",
+  "exec": "~/.config/hypr/scripts/protonvpn-icon.sh",
+  "on-click": "protonvpn-app",
+  "on-click-right": "~/.config/hypr/scripts/protonvpn-disconnect.sh",
+  "tooltip": true
 },
 
 }

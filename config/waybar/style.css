@@ -1,7 +1,7 @@
 * {
   font-family: "JetBrainsMono Nerd Font Propo";
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 700;
+  font-size: 20px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 
   border: none;
@@ -43,6 +43,12 @@ window#waybar {
 #window {
   padding-left: 12px;
   padding-right: 12px;
+}
+
+#wlr-taskbar.hyde {
+  background-color: #1e1e2e;
+  border-radius: 999px;
+  padding: 6px 10px;
 }
 
 /* workspace buttons */
@@ -114,4 +120,31 @@ tooltip {
   border-radius: 12px;
   border: 1px solid #11111b; /* crust */
   color: #cdd6f4;
+}
+
+#custom-mpd-playing.stopped {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+#custom-mpd-playing.playing {
+  color: #a6e3a1; /* green */
+}
+
+#custom-mpd-playing.paused {
+  color: #f9e2af; /* yellow */
+}
+
+#custom-protonvpn.oma.off {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+#custom-protonvpn.oma.on {
+  background-color: #1e1e2e;
+  color: #a6e3a1;
+  padding: 6px 10px;
+  border-radius: 999px;
 }

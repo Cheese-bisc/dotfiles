@@ -169,9 +169,10 @@
 	"on-click": "activate",
 	"on-scroll-up": "hyprctl dispatch workspace e+1",
 	"on-scroll-down": "hyprctl dispatch workspace e-1",
+  //"show-empty": false,
 	"persistent-workspaces": {
-		"*": 5
-	  },
+		"*": 3
+	},
 	"format": "{icon} {windows}",
 	"format-window-separator": " ",
 	"window-rewrite-default": " ",
