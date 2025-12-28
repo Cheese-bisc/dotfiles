@@ -56,6 +56,21 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+
+# Function to regenerate rofi cache
+update-rofi-cache() {
+    magick ~/.config/omarchy/current/background \
+      -resize 1920x1080 \
+      -quality 50 \
+      ~/.cache/rofi/wall.thmb
+    echo "✓ ROFI cache updated"
+}
+
+# Alias for quick access
+alias rofi-cache="update-rofi-cache"
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

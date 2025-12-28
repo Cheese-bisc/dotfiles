@@ -161,15 +161,15 @@
 },
 
 "custom/mpd-playing#oma": {
-  "format": "<span>   {}</span>",
+  "format": "{}",
   "return-type": "json",
   "interval": 2,
   "max-length": 25,
 
-  "exec": "state=$(mpc status | sed -n '2s/.*\\[\\(.*\\)\\].*/\\1/p'); track=$(mpc --format '%artist% - %title%' current); if [ \"$state\" = \"stopped\" ]; then echo '{\"text\":\"\",\"class\":\"stopped\"}'; else echo \"{\\\"text\\\":\\\"$track\\\",\\\"class\\\":\\\"$state\\\"}\"; fi",
+  "exec": "state=$(mpc status 2>/dev/null | sed -n '2s/.*\\[\\(.*\\)\\].*/\\1/p'); track=$(mpc --format '%artist% - %title%' current 2>/dev/null); if [ \"$state\" = \"stopped\" ] || [ -z \"$track\" ]; then echo '{\"text\":\"\",\"class\":\"stopped\",\"tooltip\":\"MPD stopped\"}'; else echo \"{\\\"text\\\":\\\"  $track\\\",\\\"class\\\":\\\"$state\\\",\\\"tooltip\\\":\\\"◀ Left click: Previous\\n● Middle click: Play/Pause\\n▶ Right click: Next\\\"}\"; fi",
 
-  "on-click-middle": "mpc toggle",
   "on-click": "mpc prev",
+  "on-click-middle": "mpc toggle",
   "on-click-right": "mpc next"
 },
 

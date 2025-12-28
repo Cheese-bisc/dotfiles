@@ -110,8 +110,11 @@ window#waybar {
 /* tighter spacing between right icons */
 #pulseaudio.oma,
 #network.oma,
+#battery.oma,
+#backlight.oma,
+#custom-power,
 #bluetooth.oma {
-  margin-right: 2px;
+  margin-right: 1px;
 }
 
 /* ---------------- TOOLTIP ---------------- */
