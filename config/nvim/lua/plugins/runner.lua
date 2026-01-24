@@ -1,5 +1,6 @@
 return {
   "CRAG666/code_runner.nvim",
+  -- enabled = false,
   config = function()
     local Terminal = require("toggleterm.terminal").Terminal
 
@@ -46,6 +47,6 @@ return {
       code_runner_term:send("clear && " .. cmd)
     end
 
-    vim.keymap.set("n", "<leader>r", run_code, { desc = "Run code in toggleterm float" })
+    vim.keymap.set("n", "<leader>r", run_code)
   end,
 }

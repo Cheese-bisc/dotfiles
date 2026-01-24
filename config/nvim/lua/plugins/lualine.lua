@@ -8,6 +8,19 @@ return {
     },
     sections = {
       lualine_x = {
+        -- Macro recording indicator
+        {
+          function()
+            local reg = vim.fn.reg_recording()
+            if reg == "" then
+              return ""
+            end
+            return " @" .. reg
+          end,
+          color = { fg = "#f9e2af", gui = "bold" }, -- catppuccin yellow
+        },
+
+        -- LSP clients
         {
           function()
             local clients = vim.lsp.get_clients({ bufnr = 0 })
