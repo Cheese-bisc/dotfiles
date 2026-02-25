@@ -45,12 +45,6 @@ window#waybar {
   padding-right: 12px;
 }
 
-#wlr-taskbar.hyde {
-  background-color: #1e1e2e;
-  border-radius: 999px;
-  padding: 6px 10px;
-}
-
 /* workspace buttons */
 #workspaces button {
   background: transparent;
@@ -150,4 +144,13 @@ tooltip {
   color: #a6e3a1;
   padding: 6px 10px;
   border-radius: 999px;
+}
+
+#custom-voxtype {
+  min-width: 12px;
+  margin: 0 0 0 7.5px;
+}
+
+#custom-voxtype.recording {
+  color: #a55555;
 }

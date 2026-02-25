@@ -8,7 +8,7 @@ configuration {
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
     font:                        "JetBrainsMono Nerd Font 11";
-    icon-theme:                  "Tela-circle-dracula";
+    icon-theme:                  "candy-icons";
 }
 
 @theme "~/.config/rofi/theme.rasi"

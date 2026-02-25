@@ -110,7 +110,7 @@
 
 "pulseaudio#oma": {
   "format": "{icon} {volume}%",
-  // "on-click": "omarchy-launch-or-focus-tui wiremix",
+  //"on-click": "omarchy-launch-or-focus-tui wiremix",
   "on-click": "pavucontrol",
   "on-click-right": "pamixer -t",
   "tooltip-format": "Playing at {volume}%",

@@ -8,38 +8,50 @@ configuration {
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
     font:                        "JetBrainsMono Nerd Font 10";
-    icon-theme:                  "Tela-circle-dracula";
+    icon-theme:                  "candy-icons";
 }
 
 @theme "~/.config/rofi/theme.rasi"
 
-// Main //
-window {
-    height:                      35em;
-    width:                       56em;
-    transparency:                "real";
-    fullscreen:                  false;
-    enabled:                     true;
-    cursor:                      "default";
-    spacing:                     0em;
-    padding:                     0em;
-    border-radius:               1.2em;
-    border:                       0.15em solid;
-    border-color:                #cba6f7;
-    background-color:            @main-bg;
+/* ---------- Colors ---------- */
+* {
+    /* Base (Catppuccin-mocha dark) */
+    main-bg:        #80000000;
+    main-fg:        #cdd6f4;
+
+    /* Selection: intentionally MUCH darker */
+    select-bg:      #3b164f;
+    select-fg:      #f5e0dc;
+
+    border-col:     #cba6f7;
 }
 
+/* ---------- Window ---------- */
+window {
+    height:          35em;
+    width:           56em;
+    fullscreen:      false;
+    spacing:         0em;
+
+    padding:         1em;              /* <-- REQUIRED */
+    border-radius:   0.9em;
+    clip-to-padding: true;
+
+    background-color: #73000000;        /* <-- faint alpha mask */
+    border:          0.15em solid;
+    border-color:    @border-col;
+}
+/* ---------- Layout ---------- */
 mainbox {
     enabled:                     true;
     spacing:                     0em;
     padding:                     0em;
     orientation:                 vertical;
-    children:                    [ "inputbar" , "listbox" ];
-    // background-color:            transparent;
-    background-image:            url("~/.config/omarchy/current/background", width);
+    children:                    [ "inputbar", "listbox" ];
+    background-color:            transparent;
 }
 
-// Inputs //
+/* ---------- Input ---------- */
 inputbar {
     enabled:                     true;
     spacing:                     0em;
@@ -49,21 +61,21 @@ inputbar {
 }
 
 entry {
-    border-radius:               2em;
     enabled:                     true;
     spacing:                     1em;
     padding:                     1em;
+    border-radius:               2em;
     text-color:                  @main-fg;
-    background-color:            @main-bg;
+    background-color:            #1e1e2e;
 }
 
-// Lists //
+/* ---------- Lists ---------- */
 listbox {
     padding:                     0em;
     spacing:                     0em;
     orientation:                 horizontal;
     children:                    [ "listview" ];
-    background-color:            @main-bg;
+    background-color:            transparent;
 }
 
 listview {
@@ -76,16 +88,16 @@ listview {
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
-    reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
     cursor:                      "default";
+
     background-color:            transparent;
     text-color:                  @main-fg;
     border-radius:               0.8em;
 }
 
-// Elements //
+/* ---------- Elements ---------- */
 element {
     enabled:                     true;
     spacing:                     0em;
@@ -96,14 +108,17 @@ element {
     border-radius:               0.6em;
 }
 
+/* Dark selection so candy icons pop */
 element selected.normal {
     background-color:            @select-bg;
     text-color:                  @select-fg;
     border-radius:               0.6em;
 }
 
+/* ---------- Icons / Text ---------- */
 element-icon {
     size:                        3em;
+    padding:                     0em 0.8em 0em 0em;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
@@ -117,11 +132,10 @@ element-text {
     text-color:                  inherit;
 }
 
-// Error message //
+/* ---------- Error ---------- */
 error-message {
     text-color:                  @main-fg;
     background-color:            @main-bg;
-    text-transform:              capitalize;
     children:                    [ "textbox" ];
 }
 
