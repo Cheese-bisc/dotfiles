@@ -1,9 +1,7 @@
 # include mocha.conf
 include mymocha.conf
-# include ethereal.conf
 # include transparent.conf
 # include onedark.conf
-# include current-theme.conf
 # include ayudark.conf
 # include tokyonight.conf
 background_opacity 0.50

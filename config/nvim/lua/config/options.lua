@@ -12,4 +12,4 @@ vim.opt.scrolloff = 8 -- space below the cursor near EOF (visually moves lualine
 vim.opt.fillchars:append({ eob = " " }) -- no tildes in the empty space
 vim.opt.showtabline = 2 -- Always show tabline
 vim.opt.cmdheight = 0 -- keep LazyVim/noice happy; this doesn't affect the gap above lualine
-vim.opt.cursorline = false
+vim.opt.cursorline = true

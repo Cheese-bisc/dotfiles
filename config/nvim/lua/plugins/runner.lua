@@ -5,7 +5,7 @@ return {
     local Terminal = require("toggleterm.terminal").Terminal
 
     local code_runner_term = Terminal:new({
-      direction = "vertical",
+      direction = "float",
       float_opts = {
         border = "curved",
         width = 80,

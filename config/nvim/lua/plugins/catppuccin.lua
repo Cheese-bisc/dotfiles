@@ -33,7 +33,17 @@ return {
           crust = "#08080d",
         },
       },
-      custom_highlights = {},
+      custom_highlights = function(colors)
+        return {
+          LineNr = { fg = colors.subtext1 },
+          CursorLineNr = { fg = colors.peach, bold = true },
+          CursorLine = { bg = "NONE" },
+
+          ["@punctuation.bracket"] = { fg = "#bac2de" }, -- (), {}, []
+          ["@punctuation.delimiter"] = { fg = "#bac2de" },
+          MatchParen = { fg = colors.peach, bold = true },
+        }
+      end,
       integrations = {
         aerial = true,
         bufferline = true,
