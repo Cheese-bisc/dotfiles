@@ -23,7 +23,7 @@
     "transition-duration": 600,
     "children-class": "tray-group-item",
   },
-  "modules": ["custom/expand-icon", "tray","idle_inhibitor"],
+  "modules": ["custom/expand-icon", "tray"],
 },
 
 "group/motherboard": {

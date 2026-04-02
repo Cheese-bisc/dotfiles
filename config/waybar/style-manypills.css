@@ -3,39 +3,48 @@
   font-weight: 700;
   font-size: 20px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+
   border: none;
   border-radius: 0;
-  min-height: 0;
+  min-height: 25px;
 }
+
 /* ---------------- GLOBAL RESET ---------------- */
 window#waybar {
   background: transparent;
   color: #cdd6f4; /* text */
 }
+
 .modules-left,
 .modules-center,
 .modules-right {
   background: transparent;
   padding: 0 6px;
 }
+
 /* ---------------- ISLAND BASE ---------------- */
 /* Solid Catppuccin Mocha pills */
 #waybar widget > * {
   background-color: #1e1e2e; /* base */
   border-radius: 999px;
-  padding: 4px 14px; /* UNCHANGED — baseline for all standalone pills */
-  margin: 0 4px;
+  padding: 6px 14px;
+  margin: 0 6px;
+
+  /* subtle depth, not glass */
 }
+
 /* prevent nested backgrounds */
 #waybar widget > * > * {
   background: transparent;
 }
+
 /* ---------------- LEFT ISLAND ---------------- */
 #workspaces.oma,
 #window {
   padding-left: 12px;
   padding-right: 12px;
 }
+
 /* workspace buttons */
 #workspaces button {
   background: transparent;
@@ -45,76 +54,63 @@ window#waybar {
   border-radius: 999px;
   color: #bac2de;
 }
+
 #workspaces button.active {
   background-color: #313244; /* surface0 */
   color: #cba6f7; /* mauve */
 }
+
 #workspaces button:hover {
   background-color: #45475a; /* surface1 */
 }
+
 #workspaces button.empty {
   opacity: 0.5;
 }
-#workspaces.rw,
-#workspaces.oma {
-  border: 1.5px solid #cba6f7;
-}
+
 /* ---------------- CENTER ISLANDS ---------------- */
 #clock.oma {
   font-weight: 600;
   color: #f9e2af; /* yellow */
 }
+
 #custom-spotify-playing.oma {
   padding-left: 16px;
   padding-right: 16px;
   color: #a6e3a1; /* green */
 }
-#custom-update.oma,
-#clock.oma,
-#custom-idle-indicator.oma,
-#custom-screenrecording-indicator.oma,
-#custom-protonvpn.oma {
-  border: 1.5px solid #fab387;
-}
-/* ---------------- RIGHT ISLAND — GROUPS ---------------- */
-/* Group wrappers become the single pill */
-#system-connect,
-#system-main {
-  background-color: #1e1e2e;
-  border-radius: 999px;
-  padding: 4px 10px; /* CHANGED: vertical 7→4 to match standalone pill baseline */
-  margin: 0 4px;
-  border: 1.5px solid #cba6f7;
-}
-/* Strip pill styling from modules inside groups — specific IDs beat widget > * */
-#system-connect #bluetooth,
-#system-connect #network,
-#system-main #pulseaudio,
-#system-main #battery,
-#system-main #backlight {
-  background: transparent;
-  border-radius: 0;
-  padding: 5px 8px; /* CHANGED: was 0 5px — more breathing room between icons */
-  margin: 0;
-  border: none;
-  font-size: 21px; /* CHANGED: unified with global font-size */
-}
+
+/* ---------------- RIGHT ISLAND ---------------- */
 #pulseaudio.oma {
   color: #89b4fa; /* blue */
 }
+
 #network.oma {
   color: #74c7ec; /* sky */
 }
+
 #bluetooth.oma {
   color: #94e2d5; /* teal */
 }
+
 #battery.oma {
   color: #a6e3a1; /* green */
 }
+
 #custom-power {
   color: #f38ba8; /* red */
-  font-size: 20px; /* CHANGED: unified with global font-size */
 }
+
+/* tighter spacing between right icons */
+#pulseaudio.oma,
+#network.oma,
+#battery.oma,
+#backlight.oma,
+#custom-power,
+#bluetooth.oma {
+  margin-right: 1px;
+}
+
 /* ---------------- TOOLTIP ---------------- */
 tooltip {
   background-color: #181825; /* mantle */
@@ -122,41 +118,39 @@ tooltip {
   border: 1px solid #11111b; /* crust */
   color: #cdd6f4;
 }
-/* ---------------- MPRIS ---------------- */
-#mpris.oma.stopped {
+
+#custom-mpd-playing.stopped {
   padding: 0;
   margin: 0;
   background: transparent;
 }
-#mpris.oma.playing {
+
+#custom-mpd-playing.playing {
   color: #a6e3a1; /* green */
-  border: 1.5px solid #a6e3a1;
 }
-#mpris.oma.paused {
+
+#custom-mpd-playing.paused {
   color: #f9e2af; /* yellow */
-  border: 1px solid #f9e2af;
 }
-/* ---------------- PROTONVPN ---------------- */
+
 #custom-protonvpn.oma.off {
   padding: 0;
   margin: 0;
   background: transparent;
 }
+
 #custom-protonvpn.oma.on {
   background-color: #1e1e2e;
   color: #a6e3a1;
-  padding: 4px 10px;
+  padding: 6px 10px;
   border-radius: 999px;
 }
-/* ---------------- MISC ---------------- */
+
 #custom-voxtype {
   min-width: 12px;
   margin: 0 0 0 7.5px;
 }
+
 #custom-voxtype.recording {
-  color: #a55555;
-}
-#custom-idle-indicator.active,
-#custom-notification-silencing-indicator.active {
   color: #a55555;
 }

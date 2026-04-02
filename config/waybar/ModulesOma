@@ -12,7 +12,7 @@
     "battery#oma",
     "backlight#oma",
 	]
-},
+  },
 
 "battery#oma": {
   "format": "{icon} {capacity}%",
@@ -110,16 +110,25 @@
 
 "pulseaudio#oma": {
   "format": "{icon} {volume}%",
-  //"on-click": "omarchy-launch-or-focus-tui wiremix",
   "on-click": "pavucontrol",
   "on-click-right": "pamixer -t",
   "tooltip-format": "Playing at {volume}%",
-  "scroll-step": 1,
+  "scroll-step": 5,
   "format-muted": "",
   "format-icons": {
-    "default": ["", "", ""],
-  },
+    "headphone": "",
+    "headset": "",
+    "default": ["", "", ""]
+  }
 },
+
+"custom/idle-indicator#oma": {
+    "on-click": "omarchy-toggle-idle",
+    "exec": "$OMARCHY_PATH/default/waybar/indicators/idle.sh",
+    "signal": 9,
+    "return-type": "json"
+},
+
 
 "backlight#oma": {
     "interval": 2,
@@ -182,4 +191,37 @@
   "tooltip": true
 },
 
+"mpris#oma": {
+  "format": "{status_icon} {artist} - {title}",
+  "format-paused": "{status_icon} {artist} - {title}",
+  "player": "playerctld",
+  "min-length": 15,
+  "max-length": 28,
+  "on-click": "playerctl previous",
+  "on-click-middle": "playerctl play-pause",
+  "on-click-right": "playerctl next",
+  "tooltip-format": "◀ Left click: Previous\n● Middle click: Play/Pause\n▶ Right click: Next",
+  "status-icons": {
+    "paused": "⏸",
+    "playing": "▶"
+  }
+},
+
+"group/system-main": {
+  "orientation": "horizontal",
+  "modules": [
+    "pulseaudio#oma",
+    "battery#oma",
+    "backlight#oma",
+    "custom/power",
+  ]
+},
+
+"group/system-connect": {
+  "orientation": "horizontal",
+  "modules": [
+    "bluetooth#oma",
+    "network#oma"
+  ],
+},
 }
