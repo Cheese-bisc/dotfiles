@@ -13,3 +13,13 @@ vim.opt.fillchars:append({ eob = " " }) -- no tildes in the empty space
 vim.opt.showtabline = 2 -- Always show tabline
 vim.opt.cmdheight = 0 -- keep LazyVim/noice happy; this doesn't affect the gap above lualine
 vim.opt.cursorline = true
+
+-- ~/.config/nvim/lua/config/options.lua
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "sql",
+  callback = function()
+    vim.bo.shiftwidth = 2
+    vim.bo.tabstop = 2
+    vim.bo.expandtab = true
+  end,
+})

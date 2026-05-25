@@ -141,4 +141,9 @@
         "custom/reboot"
       ]
 },
+
+"custom/runcat":{
+    "exec" : "~/.config/waybar/plugins/runcat-text/main.py",
+    "return-type" : "json"
+  },
 }

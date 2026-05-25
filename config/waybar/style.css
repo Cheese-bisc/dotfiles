@@ -64,13 +64,23 @@ window#waybar {
   font-weight: 600;
   color: #f9e2af; /* yellow */
 }
+#clock {
+  font-weight: 600;
+  color: #f9e2af; /* yellow */
+}
 #custom-spotify-playing.oma {
   padding-left: 16px;
   padding-right: 16px;
   color: #a6e3a1; /* green */
 }
+#custom-runcat {
+  font-size: 2rem;
+  color: #ffffff; /* yellow */
+}
 #custom-update.oma,
 #clock.oma,
+#clock,
+#custom-runcat,
 #custom-idle-indicator.oma,
 #custom-screenrecording-indicator.oma,
 #custom-protonvpn.oma {
@@ -159,4 +169,15 @@ tooltip {
 #custom-idle-indicator.active,
 #custom-notification-silencing-indicator.active {
   color: #a55555;
+}
+
+#custom-weather {
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+}
+
+#custom-weather.unavailable {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
 }

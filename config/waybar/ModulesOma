@@ -113,7 +113,7 @@
   "on-click": "pavucontrol",
   "on-click-right": "pamixer -t",
   "tooltip-format": "Playing at {volume}%",
-  "scroll-step": 5,
+  "scroll-step": 1,
   "format-muted": "",
   "format-icons": {
     "headphone": "",
@@ -149,7 +149,7 @@
     "interval": 3600,
 },
 "custom/screenrecording-indicator#oma": {
-    "on-click": "omarchy-cmd-screenrecord",
+    "on-click": "omarchy-capture-screenrecording",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
     "signal": 8,
     "return-type": "json",
@@ -224,4 +224,12 @@
     "network#oma"
   ],
 },
+
+"custom/weather#oma": {
+  "exec": "$OMARCHY_PATH/default/waybar/weather.sh",
+  "return-type": "json",
+  "interval": 60,
+  "tooltip": false,
+  "on-click": "notify-send -u low \"$(omarchy-weather-status)\""
+}
 }

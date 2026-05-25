@@ -21,14 +21,10 @@
   "margin-right": 6,
   "margin-bottom": 4,
   // "width": 1444,
-  "modules-left": [
-    // "hyprland/workspaces#rw",
-    "hyprland/workspaces#oma",
-    // "hyprland/window",
-    "mpris#oma",
-  ],
+  "modules-left": ["hyprland/workspaces#oma", "mpris#oma"],
   "modules-center": [
-    "clock#oma",
+    "custom/runcat",
+    "clock",
     "custom/update#oma",
     "custom/idle-indicator#oma",
     "custom/screenrecording-indicator#oma",

@@ -2,15 +2,16 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "catppuccin-mocha",
     },
   },
   {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
+    priority = 1000,
     opts = {
-      flavour = "mocha", -- latte, frappe, macchiato, mocha
+      flavour = "auto", -- latte, frappe, macchiato, mocha
       transparent_background = true,
       styles = {
         comments = { "italic" },
@@ -39,9 +40,9 @@ return {
           CursorLineNr = { fg = colors.peach, bold = true },
           CursorLine = { bg = "NONE" },
 
-          ["@punctuation.bracket"] = { fg = "#bac2de" }, -- (), {}, []
-          ["@punctuation.delimiter"] = { fg = "#bac2de" },
-          MatchParen = { fg = colors.peach, bold = true },
+          -- ["@punctuation.bracket"] = { fg = "#bac2de" }, -- (), {}, []
+          -- ["@punctuation.delimiter"] = { fg = "#cba6f7" },
+          -- MatchParen = { fg = colors.peach, bold = true },
         }
       end,
       integrations = {
