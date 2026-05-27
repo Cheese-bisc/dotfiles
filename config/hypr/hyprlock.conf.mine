@@ -1,0 +1,101 @@
+$WALLPAPER_PATH    = ~/.config/omarchy/current/background
+
+# BACKGROUND
+background {
+    path = $WALLPAPER_PATH
+    blur_passes = 3
+    contrast = 0.8916
+    brightness = 0.8172
+    vibrancy = 0.1696
+    vibrancy_darkness = 0.0
+}
+
+# GENERAL
+general {
+    no_fade_in = false
+    grace = 0
+    disable_loading_bar = false
+}
+
+# INPUT FIELD
+input-field {
+    monitor =
+    size = 190, 50
+    outline_thickness = 2
+    dots_size = 0.3
+    dots_spacing = 0.2
+    dots_center = true
+    outer_color = rgba(0, 0, 0, 0)
+    inner_color = rgba(100, 114, 125, 0.4)
+    font_color = rgb(200, 200, 200)
+    fade_on_empty = true
+    font_family = SF Pro Text Semi Bold
+    placeholder_text = <span>Enter Password</span>
+    hide_input = false
+    position = 0, -425
+    halign = center
+    valign = center
+}
+
+# Time
+label {
+    monitor =
+    text = cmd[update:1000] echo "<span>$(date +"%H:%M")</span>"
+    color = rgba(216, 222, 233, 0.70)
+    font_size = 115
+    font_family = SF Pro Display Semi Bold
+    position = 0, 310
+    halign = center
+    valign = center
+}
+
+# Day-Month-Date
+label {
+    monitor =
+    text = cmd[update:1000] echo -e "$(date +"%A, %B %d")"
+    color = rgba(216, 222, 233, 0.70)
+    font_size = 35
+    font_family = SF Pro Display Semi Bold
+    position = 0, 400
+    halign = center
+    valign = center
+}
+
+# Profile-Photo
+image {
+    monitor =
+    path = /home/aryan/.user_photo/spoider2.jpg
+    border_color = 0xffddddd
+    border_size = 0
+    size = 110
+    rounding = -1
+    rotate = 0
+    reload_time = -1
+    position = 0, -265
+    halign = center
+    valign = center
+}
+
+# USER
+label {
+    monitor =
+    text = $USER
+    color = rgba(216, 222, 233, 0.70)
+    font_size = 18
+    font_family = SF Pro Text Semi Bold
+    position = 0, -360
+    halign = center
+    valign = center
+}
+
+# CURRENT MEDIA
+label {
+    monitor =
+    text = cmd[update:1000] echo "$(~/.config/hypr/scripts/media-playing.sh)"
+    color = rgba(255, 255, 255, 0.7)
+    font_size = 18
+    font_family = SF Pro Display Semi Bold
+    position = 100, 0
+    halign = left
+    valign = center
+}

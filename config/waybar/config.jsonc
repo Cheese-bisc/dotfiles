@@ -23,7 +23,7 @@
   // "width": 1444,
   "modules-left": ["hyprland/workspaces#oma", "mpris#oma"],
   "modules-center": [
-    "custom/runcat",
+    // "custom/runcat",
     "clock",
     "custom/update#oma",
     "custom/idle-indicator#oma",
